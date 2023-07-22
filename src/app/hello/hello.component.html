@@ -1,0 +1,41 @@
+<div id="body">
+    <h1>{{title}}</h1>
+    <p>{{message}}</p>
+
+    <h2>ngIf</h2>
+    <p *ngIf="visible" (click)="doIfClick()">This is True message.</p>
+    <p *ngIf="!visible" (click)="doIfClick()">This is False messasge.</p>
+
+    <h2>InputForm</h2>
+    <p [class]="styleClass">{{inputMessage}}</p>
+
+    <input type="text" #field1 
+        (keyup)="doType(field1.value)" />
+
+
+    <h2>ClickPropaty</h2>
+    <!-- <p>{{count}}回クリックしました</p> -->
+    <p>{{countMessage}}</p>
+    <button (click)="doClick()">Click</button>
+
+    <h2>Method</h2>
+    <p>{{today()}}</p>
+
+    <h2>ngFor</h2>
+    <ul>
+        <li *ngFor="let item of data">{{item}}</li>
+    </ul>
+
+    <h2>ngSwitch</h2>
+    <div [ngSwitch]="switch">
+        <p *ngSwitchCase="'one'">First paragraph!</p>
+        <p *ngSwitchCase="'two'">Two paragraph!</p>
+        <p *ngSwitchCase="'three'">Three paragraph!</p>
+    </div>
+
+    <select #sel (change)="doSelect(sel.value)">
+        <option>one</option>
+        <option>two</option>
+        <option>three</option>
+    </select>
+</div>
