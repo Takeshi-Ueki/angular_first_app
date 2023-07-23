@@ -26,6 +26,9 @@ export class HelloComponent {
   visible!: boolean;
   data!: string[];
   switch!: string;
+  nowClass: any;
+  nowStyle: any;
+  styleMessage!: string;
 
   // inlineTitle!: string;
   // inlineMessage!: string;
@@ -52,6 +55,20 @@ export class HelloComponent {
       'third'
     ]
     this.switch = 'one';
+
+    // ngClass用
+    this.nowClass = {
+      'thin': false,
+      'large': false,
+      'frame': false
+    };
+
+    // ngStyle用
+    this.nowStyle = {
+      'border-style': '',
+      'border-width': '',
+      'border-color': ''
+    };
 
     // this.inlineTitle = 'Hello-app-inline';
     // this.inlineMessage = 'This is inline-template!';
@@ -81,5 +98,18 @@ export class HelloComponent {
 
   doSelect(val: string) {
     this.switch = val;
+  }
+
+  check(c1: boolean, c2: boolean, c3: boolean) {
+    this.nowClass.thin = c1;
+    this.nowClass.large = c2;
+    this.nowClass.frame = c3;
+  }
+
+  styleCheck(in1: string, in2: string, in3: string) {
+    this.nowStyle['border-style'] = in1,
+    this.nowStyle['border-width'] = in2 + 'px',
+    this.nowStyle['border-color'] = in3
+    this.styleMessage = JSON.stringify(this.nowStyle);
   }
 }

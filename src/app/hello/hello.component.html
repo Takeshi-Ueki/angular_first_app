@@ -38,4 +38,37 @@
         <option>two</option>
         <option>three</option>
     </select>
+
+    <!-- Styleバインディング -->
+    <!-- [style.color]="'#FFF'" のような形で記述するとfontの色が変わる -->
+    <p
+        [style.font-size.pt]="36"
+        [style.color]="'#F00'">{{message}}</p>
+
+    <p
+        [style.font-size.pt]="24"
+        [style.color]="'#F99'">{{message}}</p>
+
+    <p
+        [style.font-size.pt]="12"
+        [style.color]="'#Fcc'">{{message}}</p>
+    <!-- Styleバインディングここまで -->
+
+    <h2>ngClass</h2>
+    <p [ngClass]="nowClass">ngClass:{{message}}</p>
+    <input type="checkbox" #ck1
+        (change)="check(ck1.checked, ck2.checked, ck3.checked);"/>Thin
+    <input type="checkbox" #ck2
+        (change)="check(ck1.checked, ck2.checked, ck3.checked);"/>Large
+    <input type="checkbox" #ck3
+        (change)="check(ck1.checked, ck2.checked, ck3.checked);"/>Frame
+
+    <h2>ngStyle</h2>
+    <p [ngStyle]="nowStyle">ngStyle:{{styleMessage}}</p>
+    <input type="text" #in1
+        (change)="styleCheck(in1.value, in2.value, in3.value);"/><br>
+    <input type="text" #in2
+        (change)="styleCheck(in1.value, in2.value, in3.value);"/><br>
+    <input type="text" #in3
+        (change)="styleCheck(in1.value, in2.value, in3.value);"/><br>
 </div>
